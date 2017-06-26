@@ -1,0 +1,31 @@
+﻿@model IEnumerable<LearningSystem.Models.ViewModels.Blog.ArticleVm>
+@{
+    ViewBag.Title = "AllArticles";
+    Layout = "~/Areas/Blog/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>Blog of Learning System</h2>
+<br />
+@if (User.IsInRole("BlogAuthor"))
+    {
+        @Html.ActionLink("Add", "Add", null,new {@class="btn btn-info"})
+    }
+
+<br/>
+<br/>
+
+<section>
+    @foreach (var vm in Model)
+    {
+        <article>
+            <h3>Title:@Html.DisplayFor(vms => vm.Title)</h3>
+            <p>
+                @Html.DisplayFor(vms => vm.Content)
+            </p>
+            
+            <span class="author">Author:@Html.DisplayFor(vms => vm.Author.Name)</span>
+            
+            <span class="publish-date">Published at:@Html.DisplayFor(vms => vm.PublishDate)</span>
+        </article>
+    }
+</section>

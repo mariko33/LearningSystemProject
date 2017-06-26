@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add Article</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        <input type="text" name="Title" class="form-control" id="title" placeholder="Title"/>
+        <br/>
+        <textarea rows="10" cols="30" name="Content" class="form-control" id="content" placeholder="Content"></textarea>
+        <br/>
+
+
+        <input type="submit" value="Add Article" class="btn btn-success"/>
+    </div>
+
+}
